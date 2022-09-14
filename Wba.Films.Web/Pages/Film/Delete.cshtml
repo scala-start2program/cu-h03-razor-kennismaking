@@ -1,0 +1,60 @@
+﻿@page "{id:int?}"
+@model Wba.Films.Web.Pages.Film.DeleteModel
+
+@{
+    ViewData["Title"] = "Film wissen";
+}
+
+<h1>Een film verwijderen</h1>
+<h3>Ben je zeker dat deze film mag verwijderd worden?</h3>
+<div>
+    <hr />
+
+    <h4>Film</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Titel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Titel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Uitgiftedatum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Uitgiftedatum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Prijs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Prijs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Rating)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Film.ID" />
+<div class="btn-group">
+            <button type="submit" class="btn  btn-danger" title="Wissen">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+            <a asp-page="./Index" class="btn btn-success" title="Annuleren">
+                <i class="fas fa-undo-alt"></i>
+            </a>
+        </div>
+
+    </form>
+</div>

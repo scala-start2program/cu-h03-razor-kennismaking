@@ -1,0 +1,63 @@
+﻿@page
+@model Wba.Films.Web.Pages.Film.IndexModel
+
+@{
+    ViewData["Title"] = "Overzicht films";
+}
+
+<h1>Overzicht alle films</h1>
+
+<p>
+        <a asp-page="Create" class="btn btn-primary"><i class="fa fa-plus"></i> Nieuwe film</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Titel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Uitgiftedatum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Rating)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Film) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uitgiftedatum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prijs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <div class="btn-group">
+                    <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-sm btn-warning" title="Wijzig"><i class="fas fa-pencil-alt"></i></a>
+                    <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-sm btn-success" title="=Details"><i class="far fa-eye"></i></a>
+                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-sm btn-danger" title="Wissen"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

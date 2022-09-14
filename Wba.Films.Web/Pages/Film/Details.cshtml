@@ -1,0 +1,54 @@
+﻿@page "{id:int?}"
+@model Wba.Films.Web.Pages.Film.DetailsModel
+
+@{
+    ViewData["Title"] = "Fimdetails";
+}
+
+<h1>Details van een film</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Titel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Titel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Uitgiftedatum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Uitgiftedatum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Prijs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Prijs)
+        </dd>
+                <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Film.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Rating)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="btn-group">
+        <a asp-page="./Edit" asp-route-id="@Model.Film.ID" class="btn  btn-warning" title="Wijzigen">
+            <i class="fas fa-pencil-alt"></i>
+        </a>
+        <a asp-page="./Index" class="btn btn-success" title="Terug naar overzicht">
+            <i class="fas fa-undo-alt"></i>
+        </a>
+    </div>
+
+</div>
